@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Mis direcciones</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <form [formGroup]="formAddresses">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-list>
+
+            <ion-item margin-top transparent>
+              <ion-label color="primary" stacked>Nombre dirección</ion-label>
+              <ion-input type="text" formControlName="nameAddresses" maxlength="70"></ion-input>
+              <ion-label error-field no-margin
+                *ngIf="formAddresses.get('nameAddresses').errors && (formAddresses.get('nameAddresses').dirty || formAddresses.get('nameAddresses').touched || hasError)">
+                <p class="error">
+                  El campo no puede estar vacío
+                </p>
+              </ion-label>
+            </ion-item>
+
+            <ion-item margin-top transparent>
+              <ion-label color="primary" stacked>Dirección</ion-label>
+              <ion-input type="text" formControlName="Addresses" maxlength="70"></ion-input>
+              <ion-label error-field no-margin
+                *ngIf="formAddresses.get('Addresses').errors && (formAddresses.get('Addresses').dirty || formAddresses.get('Addresses').touched || hasError)">
+                <p class="error">
+                  El campo no puede estar vacío
+                </p>
+              </ion-label>
+            </ion-item>
+
+          </ion-list>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <button ion-button (click)="save()">{{ saveButtonName }}</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+
+  <ion-list>
+
+    <ion-item *ngFor="let record of records">
+      <h2>Nombre dirección: {{record.add_name}}</h2>
+      <h2>Dirección: {{record.add_addresses}}</h2>
+
+      <button ion-button clear item-end (click)="actionUpdate(record)">
+        <ion-icon name="create" style="font-size: large;"></ion-icon>
+      </button>
+      <button ion-button clear item-end (click)="delete()">
+        <ion-icon name="trash" style="font-size: large;"></ion-icon>
+      </button>
+    </ion-item>
+    <br>
+    <br>
+    <br>
+    </ion-list>
+
+</ion-content>

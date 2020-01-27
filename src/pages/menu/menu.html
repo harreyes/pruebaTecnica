@@ -1,28 +1,38 @@
 <ion-header>
   <ion-navbar>
-      <ion-title>
-          Menu
-      </ion-title>
-      <ion-buttons end>
-        <button (click)="confirmarCierreSesion()" ion-button icon-only>
-          
-          <ion-icon name="log-out"></ion-icon>
+    <ion-title>
+      Menu
+    </ion-title>
+    <ion-buttons end>
+      <button (click)="confirmarCierreSesion()" ion-button icon-only>
+
+        <ion-icon name="log-out"></ion-icon>
       </button>
-      </ion-buttons>
+    </ion-buttons>
   </ion-navbar>
 
-  
+</ion-header>
+
+
 <ion-content>
   <div style="text-align: center;">
     <h3>Bienvenido: {{userName}}</h3>
   </div>
 
-  <div padding>
-    <button ion-button class="card-title" color="primary" (click)="goProducts()">Ver productos</button>
+  <br>
+  <br>
+
+  <div style="text-align: center;" padding>
+    <button ion-button color="primary" (click)="goProducts()">Ver productos</button>
   </div>
 
-  <div padding>
-    <button ion-button class="card-title" color="primary" (click)="goContact()">Contacto</button>
+  <div style="text-align: center;" padding>
+    <button ion-button color="primary" (click)="goContact()">Contacto</button>
+  </div>
+
+  
+  <div style="text-align: center;" padding>
+    <button ion-button color="primary" (click)="goAddresses()">Mis direcciones</button>
   </div>
 
 </ion-content>

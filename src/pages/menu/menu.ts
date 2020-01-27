@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
 import { LoginPage } from '../login/login';
 import { ProductsPage } from '../products/products';
 import { ContactPage } from '../contact/contact';
+import { AddressesPage } from '../addresses/addresses';
 
 @IonicPage()
 @Component({
@@ -28,9 +29,12 @@ export class MenuPage {
     this.navCtrl.push(ProductsPage);
   }
 
+  goAddresses(){
+    this.navCtrl.push(AddressesPage);
+  }
+
   goContact(){
     this.navCtrl.push(ContactPage);
-
   }
 
   alerta(mensaje: string) {

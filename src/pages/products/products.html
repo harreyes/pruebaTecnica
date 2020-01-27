@@ -6,4 +6,19 @@
 
 <ion-content padding>
 
+  <ion-card *ngFor="let product of infoProducts">
+
+    <ion-card-header>
+      {{product.Name}}
+    </ion-card-header>
+
+    <ion-card-content>
+      <p>{{product.Description}}</p>
+      <img src="{{product.ImageUrl}}">
+
+    </ion-card-content>
+
+  </ion-card>
+
+
 </ion-content>

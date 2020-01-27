@@ -1,4 +1,4 @@
-  
+
 import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/map';
@@ -34,39 +34,46 @@ export class ServicesProvider {
 
         return new Promise
             (
-            (resolve, reject) => {
-                this.http.post(url, body, options)
-                    .map(res => res.json())
-                    .subscribe
-                    (
-                    data => { resolve(data); },
-                    error => {
-                        reject(error)
-                    }
-                    )
-            }
+                (resolve, reject) => {
+                    this.http.post(url, body, options)
+                        .map(res => res.json())
+                        .subscribe
+                        (
+                            data => { resolve(data); },
+                            error => {
+                                reject(error)
+                            }
+                        )
+                }
             );
     }
 
     /**
      * Consumir servicio que trae los productos
      */
-    getProducts() {
+    getProducts(bodyIfo) {
+        let url = this.infoProducts;
+        let body = bodyIfo;
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+        let options = new RequestOptions({ headers: headers });
+
         return new Promise
             (
-            (resolve, reject) => {
-                this.http.get(this.infoProducts)
-                    .map(res => res.json())
-                    .subscribe
-                    (
-                    data => { resolve(data); },
-                    error => { reject(error); }
-                    )
-            }
+                (resolve, reject) => {
+                    this.http.post(url, body, options)
+                        .map(res => res.json())
+                        .subscribe
+                        (
+                            data => { resolve(data); },
+                            error => {
+                                reject(error)
+                            }
+                        )
+                }
             );
     }
 
-
+ 
 
 
 

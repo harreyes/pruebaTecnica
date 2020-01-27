@@ -4,6 +4,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { HttpModule } from '@angular/http';
+import { SQLite } from '@ionic-native/sqlite';
 
 //import pages
 import { MyApp } from './app.component';
@@ -19,6 +20,7 @@ import { ServicesProvider } from '../providers/services/services';
  */
 import { FCM } from '@ionic-native/fcm';
 import { ProductsPage } from '../pages/products/products';
+import { AddressesPage } from '../pages/addresses/addresses';
 
 @NgModule({
   declarations: [
@@ -38,14 +40,17 @@ import { ProductsPage } from '../pages/products/products';
     LoginPage,
     ContactPage,
     MenuPage,
-    ProductsPage
+    ProductsPage,
+    AddressesPage,
+    AddressesPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     ServicesProvider,
     FCM,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    SQLite,
+    { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
-export class AppModule {}
+export class AppModule { }
