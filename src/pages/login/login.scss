@@ -1,0 +1,13 @@
+page-login {
+    .fondo{
+
+        background: rgb(145, 173, 168);
+        background: -moz-linear-gradient(top, rgb(124, 151, 146)0%, rgb(78, 108, 158) 100%);
+        background: -webkit-gradient(left top, left bottom, color-stop(0%, rgb(68, 87, 83)), color-stop(100%, rgba(76,135,229,1)));
+        background: -webkit-linear-gradient(top, rgb(146, 192, 184) 0%, rgb(75, 104, 151) 100%);
+        background: -o-linear-gradient(top, rgb(165, 231, 219) 0%, rgb(81, 111, 158) 100%);
+        background: -ms-linear-gradient(top, rgb(159, 223, 211) 0%, rgb(59, 86, 129) 100%);
+        background: linear-gradient(to bottom, rgb(160, 223, 211) 0%, rgb(74, 106, 156)100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66e4cd', endColorstr='#4c87e5', GradientType=0 );
+    }
+}
